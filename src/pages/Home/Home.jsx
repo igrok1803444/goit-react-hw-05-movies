@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getTrending } from 'scripts/Api';
 
 const Home = () => {
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
   useEffect(() => {
     async function fetchRequest() {
       const popularMovies = await getTrending();
