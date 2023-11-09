@@ -9,3 +9,25 @@ export async function getTrending() {
 
   return response.data.results;
 }
+export async function fetchMovieDetails(movieId) {
+  const response = await axios.get(`movie/${movieId}?language=uk-UK`);
+
+  return response.data;
+}
+export async function fetchMovieActors(movieId) {
+  const response = await axios.get(`movie/${movieId}/credits?language=uk-UK`);
+
+  return response.data;
+}
+export async function fetchMovieReviews(movieId) {
+  const response = await axios.get(`movie/${movieId}/reviews`);
+
+  return response.data.results;
+}
+export async function fetchMovies(query) {
+  const response = await axios.get(
+    `search/movie?language=uk-UK&query=${query}`
+  );
+
+  return response.data.results;
+}

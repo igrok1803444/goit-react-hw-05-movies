@@ -6,11 +6,11 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     async function fetchRequest() {
-      const popularMovies = await getTrending();
-      setMovies(popularMovies);
+      const movies = await getTrending();
+      setMovies(movies);
     }
     fetchRequest();
   }, []);
-  return <div>{movies.length > 0 && <MovieList movies={movies} />}</div>;
+  return <main>{movies.length > 0 && <MovieList movies={movies} />}</main>;
 };
 export default Home;

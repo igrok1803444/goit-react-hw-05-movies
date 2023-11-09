@@ -1,15 +1,16 @@
 import { Suspense } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { NavContainer, RouteLink, TopBar } from './Header.styled';
 
 export const Header = () => {
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to={'/'}>Home</NavLink>
-          <NavLink to={'/movies'}>Movie</NavLink>
-        </nav>
-      </header>
+      <TopBar>
+        <NavContainer>
+          <RouteLink to={'/'}>Home</RouteLink>
+          <RouteLink to={'/movies'}>Movie</RouteLink>
+        </NavContainer>
+      </TopBar>
       <Suspense>
         <Outlet />
       </Suspense>

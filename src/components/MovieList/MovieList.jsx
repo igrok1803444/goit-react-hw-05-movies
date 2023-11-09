@@ -1,12 +1,12 @@
 import { MovieItem } from 'components/MovieItem/MovieItem';
+import { List } from './MovieList.styled';
 
 export const MovieList = ({ movies }) => {
-  console.log(movies);
   return (
-    <ul>
+    <List>
       {movies.map(movie => {
         return <MovieItem key={movie.id} movie={movie} />;
       })}
-    </ul>
+    </List>
   );
 };
