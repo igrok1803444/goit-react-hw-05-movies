@@ -51,9 +51,10 @@ const MovieDetails = () => {
               <OverViewText>{movie.overview || NoDataMessage}</OverViewText>
               <h3>Жанри</h3>
               <ul>
-                {movie.genres.map(genre => (
-                  <li key={genre.id}>{genre.name || NoDataMessage}</li>
-                ))}
+                {NoDataMessage ||
+                  movie.genres.map(genre => (
+                    <li key={genre.id}>{genre.name}</li>
+                  ))}
               </ul>
 
               <LinkList>
